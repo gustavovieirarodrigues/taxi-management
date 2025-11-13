@@ -1,0 +1,304 @@
+/* ========================================
+   MODAL DE AGENDAMENTO
+   ======================================== */
+
+.modal-overlay-agendamento {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  animation: fadeIn 0.3s ease-out;
+  padding: 20px;
+}
+
+.modal-agendamento {
+  background: var(--card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.4s ease-out;
+}
+
+.modal-header-agendamento {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1101;
+}
+
+.modal-title-agendamento {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: white;
+  letter-spacing: 1px;
+}
+
+.modal-close-agendamento {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 32px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.modal-close-agendamento:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.modal-body-agendamento {
+  padding: var(--spacing-lg);
+}
+
+.form-group-modal {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-label-modal {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-secondary);
+  letter-spacing: 0.8px;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+}
+
+.form-input-modal,
+.form-select-modal {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-md);
+  background: #0e0e0e;
+  border: 2px solid #2e2e2e;
+  border-radius: var(--radius-md);
+  color: #ddd;
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+
+.form-input-modal::placeholder,
+.form-select-modal::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input-modal:focus,
+.form-select-modal:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: #0f0f0f;
+}
+
+.form-select-modal {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23bfbfbf' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+  padding-right: 40px;
+}
+
+/* ---- AUTOCOMPLETE ---- */
+.input-with-suggestions {
+  position: relative;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #0e0e0e;
+  border: 2px solid #3b82f6;
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1200;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.suggestion-item {
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.suggestion-item:hover {
+  background: #1a1a1a;
+  padding-left: calc(var(--spacing-md) + 4px);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-name {
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.suggestion-phone {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* ---- ALERTS NO MODAL ---- */
+.alert-modal {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  animation: slideDown var(--transition-slow) ease-out;
+}
+
+.alert-success-modal {
+  background: rgba(16, 185, 129, 0.1);
+  border-left-color: #10b981;
+  color: #10b981;
+}
+
+.alert-error-modal {
+  background: rgba(239, 68, 68, 0.1);
+  border-left-color: #ef4444;
+  color: #ef4444;
+}
+
+.alert-close-modal {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.alert-close-modal:hover {
+  opacity: 0.7;
+}
+
+/* ---- FOOTER DO MODAL ---- */
+.modal-footer-agendamento {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-modal {
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 1px;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary-modal {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.btn-primary-modal:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary-modal:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary-modal {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary-modal:hover:not(:disabled) {
+  border-color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-modal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---- RESPONSIVO ---- */
+@media (max-width: 768px) {
+  .modal-agendamento {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+
+  .modal-header-agendamento {
+    padding: var(--spacing-md);
+  }
+
+  .modal-title-agendamento {
+    font-size: var(--font-size-lg);
+  }
+
+  .modal-body-agendamento {
+    padding: var(--spacing-md);
+  }
+
+  .btn-modal {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-height: 600px) {
+  .modal-agendamento {
+    max-height: 100vh;
+  }
+
+  .modal-header-agendamento {
+    padding: var(--spacing-sm);
+  }
+
+  .modal-body-agendamento {
+    padding: var(--spacing-sm);
+  }
+}

@@ -1,0 +1,383 @@
+/* ========================================
+   ESTILOS RESPONSIVOS
+   ======================================== */
+
+/* ---- TABLETS (768px até 1024px) ---- */
+@media (max-width: 1024px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vehicle-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- MOBILE (até 768px) ---- */
+@media (max-width: 768px) {
+  /* App Layout */
+  .app-main {
+    flex-direction: column;
+  }
+
+  .app-sidebar {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: var(--z-sidebar-mobile);
+    border-right: var(--border-width) solid var(--border-color);
+    border-radius: 0;
+    overflow-y: auto;
+  }
+
+  .app-sidebar.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .app-body {
+    padding: var(--spacing-md);
+  }
+
+  /* Header */
+  .app-header {
+    padding: var(--spacing-md);
+  }
+
+  .brand {
+    font-size: var(--font-size-3xl);
+  }
+
+  .tagline {
+    font-size: var(--font-size-base);
+  }
+
+  /* Dashboard */
+  .dashboard-header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .dashboard-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .dashboard-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .dashboard-actions .btn {
+    width: 100%;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+
+  .stat-card-value {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* Vehicle Grid */
+  .vehicle-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .vehicle-card {
+    padding: var(--spacing-md);
+  }
+
+  .vehicle-icon {
+    height: 120px;
+  }
+
+  .vehicle-name {
+    font-size: var(--font-size-base);
+  }
+
+  /* Grid */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .col,
+  .col-md,
+  .col-lg {
+    min-width: 100%;
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .btn-lg {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  /* Forms */
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .form-control,
+  .form-select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 16px; /* Evita zoom em inputs no iOS */
+  }
+
+  /* Tables */
+  .table {
+    font-size: var(--font-size-xs);
+  }
+
+  .table th,
+  .table td {
+    padding: var(--spacing-sm);
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: var(--spacing-md);
+  }
+
+  /* Tabs */
+  .tabs {
+    gap: var(--spacing-sm);
+  }
+
+  .tab {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Toast */
+  .toast-container {
+    left: var(--spacing-md);
+    right: var(--spacing-md);
+    top: auto;
+    bottom: var(--spacing-md);
+  }
+
+  .toast {
+    min-width: auto;
+  }
+
+  /* Section */
+  .section {
+    padding: var(--spacing-md);
+  }
+
+  .section-title {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ---- MOBILE PEQUENO (até 480px) ---- */
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  .brand {
+    font-size: var(--font-size-2xl);
+  }
+
+  .tagline {
+    font-size: var(--font-size-sm);
+  }
+
+  .dashboard-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .section-title {
+    font-size: var(--font-size-base);
+  }
+
+  .stat-card-value {
+    font-size: var(--font-size-xl);
+  }
+
+  .btn {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: var(--spacing-sm);
+  }
+
+  .toast-container {
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+
+  /* Sidebar */
+  .app-sidebar {
+    width: 200px;
+  }
+
+  .sidebar-menu-item {
+    padding: var(--spacing-sm) var(--spacing-xs);
+    font-size: var(--font-size-sm);
+  }
+
+  .hamburger {
+    left: var(--spacing-sm);
+    top: var(--spacing-sm);
+    width: 40px;
+    height: 40px;
+  }
+
+  .hamburger-lines {
+    width: 22px;
+    height: 14px;
+  }
+
+  .hamburger-line {
+    height: 1.5px;
+  }
+}
+
+/* ---- LANDSCAPE MOBILE (max-height: 500px) ---- */
+@media (max-height: 500px) {
+  .app-header {
+    padding: var(--spacing-sm);
+  }
+
+  .brand {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .tagline {
+    margin-top: 0;
+    font-size: var(--font-size-xs);
+  }
+
+  .modal-content {
+    max-height: 95vh;
+  }
+
+  .app-body {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* ---- IMPRESSÃO ---- */
+@media print {
+  .app-sidebar,
+  .app-header,
+  .app-footer,
+  .hamburger,
+  .dashboard-actions,
+  .btn {
+    display: none;
+  }
+
+  .app-body {
+    padding: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+
+/* ---- HIGH DPI / RETINA DISPLAYS ---- */
+@media (min-resolution: 2dppx) {
+  .btn:hover,
+  .card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* ---- TOUCH DEVICES ---- */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  .sidebar-menu-item:hover {
+    padding-left: var(--spacing-sm);
+  }
+}
+
+/* ---- DARK MODE FORCED ---- */
+@media (prefers-color-scheme: dark) {
+  /* Já seguimos dark mode por padrão */
+}
+
+/* ---- REDUCED MOTION ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
